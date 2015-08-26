@@ -21,7 +21,6 @@ del(['tmp/*.js', '!tmp/d.js'], function (err, paths) {
 });
 ```
 
-
 # Beware
 
 The glob pattern `**` matches all children and *the parent*.
