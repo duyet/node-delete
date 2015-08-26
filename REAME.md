@@ -16,7 +16,7 @@ $ npm install --save node-delete
 ```js
 var del = require('node-delete');
 
-del(['tmp/*.js', '!tmp/duyetdev.js'], function (err, paths) {
+del(['tmp/*.js', '!tmp/d.js'], function (err, paths) {
 	console.log('Deleted files/folders:\n', paths.join('\n'));
 });
 ```
@@ -37,3 +37,24 @@ You have to explicitly ignore the parent directories too:
 ```js
 del.sync(['public/assets/**', '!public/assets', '!public/assets/goat.png']);
 ```
+
+
+## API
+
+### del(patterns, [options], callback)
+### del.sync(patterns, [options])
+
+The async method gets an array of deleted paths as the second argument in the callback, while the sync method returns the array.
+
+#### options
+
+Type: `object`
+
+See the node-glob [options](https://github.com/isaacs/node-glob#options).
+
+#### options.force
+
+Type: `boolean`  
+Default: `false`
+
+Allow deleting the current working directory and files/folders outside it.
