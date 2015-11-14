@@ -1,5 +1,7 @@
 # node-delete
 
+[![NPM](https://nodei.co/npm/node-delete.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-delete/)
+
 Delete files, folders in Nodejs using globs.
 
 It also protects you against deleting the current working directory and above.
