@@ -17,27 +17,6 @@ function safeCheck(file) {
 	}
 }
 
-module.exports.sync = function(patterns, opts) {
-	opts = objectAssign({}, opts);
-
-	var force = opts.force;
-	delete opts.force;
-
-	var deletedFiles = [];
-
-	globby.sync(patterns, opts).forEach(function (el) {
-		if (!force) {
-			safeCheck(el);
-		}
-
-		el = path.resolve(opts.cwd || '', el);
-		deletedFiles.push(el);
-		rimraf.sync(el);
-	});
-
-	return deletedFiles;
-};
-
 module.exports = function (patterns, opts, cb) {
 	if (typeof opts !== 'object') {
 		cb = opts;
@@ -75,5 +54,26 @@ module.exports = function (patterns, opts, cb) {
 			cb(null, deletedFiles);
 		});
 	});
+};
+
+module.exports.sync = function(patterns, opts) {
+	opts = objectAssign({}, opts);
+
+	var force = opts.force;
+	delete opts.force;
+
+	var deletedFiles = [];
+
+	globby.sync(patterns, opts).forEach(function (el) {
+		if (!force) {
+			safeCheck(el);
+		}
+
+		el = path.resolve(opts.cwd || '', el);
+		deletedFiles.push(el);
+		rimraf.sync(el);
+	});
+
+	return deletedFiles;
 };
 
