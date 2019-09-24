@@ -51,7 +51,7 @@
     "rimraf": "^2.2.8"
   },
   "devDependencies": {
-    "fs-extra": "0.23.1",
+    "fs-extra": "8.1.0",
     "mocha": "*",
     "path-exists": "1.0.0"
   },
