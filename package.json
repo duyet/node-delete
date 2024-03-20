@@ -43,7 +43,7 @@
     "filesystem"
   ],
   "dependencies": {
-    "each-async": "^1.0.0",
+    "each-async": "^2.0.0",
     "globby": "^14.0.0",
     "is-path-cwd": "^3.0.0",
     "is-path-in-cwd": "^4.0.0",
