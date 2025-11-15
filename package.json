@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "each-async": "^2.0.0",
-    "globby": "^15.0.0",
+    "globby": "^16.0.0",
     "is-path-cwd": "^4.0.0",
     "is-path-in-cwd": "^4.0.0",
     "object-assign": "^4.0.0",
